@@ -5,6 +5,10 @@ if($_GET['id']==""){
 require_once 'sqlconfig.php';
 $conn = connectdb();
 $id = intval($_GET['id']);
+
+/*
+ * 获取用户基本信息
+ */
 $result = mysqli_query($conn,"SELECT * FROM user WHERE id='$id'");
 $user_arr = mysqli_fetch_array($result,MYSQLI_ASSOC);
 ?>
