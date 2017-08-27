@@ -17,6 +17,7 @@ $dri_name = $dri_arr['name'];
 $dri_seatsleft = $dri_arr['seatsleft']-1;
 
 $niceo = 0;
+
 //更改座位数
 mysqli_query($con,"UPDATE seatsinfo SET `seatsleft`=$dri_seatsleft WHERE info_id=$info_id");
 

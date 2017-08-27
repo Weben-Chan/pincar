@@ -3,6 +3,7 @@ $niceo = $_GET['niceo'];
 $rec_id = $_GET['rec_id'];
 $psg_id = $_GET['psg_id'];
 
+//记录座位乘客信息
 require_once 'sqlconfig.php';
 $con = connectdb();
 mysqli_query($con,"UPDATE pin_rec SET `niceo`=$niceo,`finish`=1  WHERE `rec_id`=$rec_id");

@@ -7,6 +7,7 @@ if(empty($_GET['info_id'])){
 require_once 'sqlconfig.php';
 $conn = connectdb();
 
+//删除座位
 $info_id = $_GET['info_id'];
 $id = findid($info_id);
 echo $info_id;

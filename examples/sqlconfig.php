@@ -1,4 +1,5 @@
 <?php
+//连接数据库
 function connectdb(){
     $conn = mysqli_connect("localhost", "root", "");
     mysqli_set_charset($conn, "utf8");
@@ -11,6 +12,7 @@ function connectdb(){
     return $conn;
 }
 
+//通过座位流水号找到发布该座位的司机工号
 function findid($info_id){
     $conn = mysqli_connect("localhost", "root", "");
     mysqli_set_charset($conn, "utf8");
@@ -26,6 +28,7 @@ function findid($info_id){
     return $id;
 }
 
+//更新点赞数
 function updnice($name){
     $conn = mysqli_connect("localhost", "root", "");
     mysqli_set_charset($conn, "utf8");
@@ -36,6 +39,7 @@ function updnice($name){
     return $nice_count;
 }
 
+//更新该座位的点赞数
 function updniceo($info_id,$name){
     $conn = mysqli_connect("localhost", "root", "");
     mysqli_set_charset($conn, "utf8");

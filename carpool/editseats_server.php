@@ -1,5 +1,6 @@
 <?php
 
+//检查用户输入数据
 $info_id = $_POST['info_id'];
 $date = $_POST['date'];
 $time = $_POST['time'];
@@ -23,6 +24,7 @@ if($seats==""){
     die('seats is empty');
 }
 
+//插入座位数据到数据库
 require_once 'sqlconfig.php';
 $conn =connectdb();
 mysqli_query($conn,"UPDATE seatsinfo SET date='$date',time='$time',startaddr='$startaddr',finaladdr='$finaladdr',seats='$seats'WHERE info_id = '$info_id'");

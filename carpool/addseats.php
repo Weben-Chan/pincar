@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>发布空座位</title>
-</head>
-<body>
 <?php
+
 $id = $_POST['id'];
 require_once 'sqlconfig.php';
 $conn =connectdb();
 
+//检查传递参数
 if(!isset($_POST['date'])){
     die('date is not defined');
 }
@@ -52,7 +47,7 @@ $nice = updnice($name);
 //    echo "<script>alert('拼车座位数不可为空！'); history.go(-1);</script>";
 //}
 
-
+//检查用户输入是否为空，不为空则插入数据
 if($date=="" || $time=="" || $startaddr=="" || $finaladdr=="" || $seats==""){
     echo "<script>alert('亲，请补全拼车信息哦'); history.go(-1);</script>";
 }else {
@@ -61,6 +56,3 @@ if($date=="" || $time=="" || $startaddr=="" || $finaladdr=="" || $seats==""){
 	mysqli_query($conn,$sql );
     header("Location:../examples/seats_supply.php?id=$id");
 }
-?>
-</body>
-</html>

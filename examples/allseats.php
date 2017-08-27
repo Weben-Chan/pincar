@@ -185,6 +185,7 @@ $othseats_count = mysqli_num_rows($othseats_result);
                                         </thead>
                                         <tbody>
 
+                                        //别人发布的座位（有位置）
                                         <?php
                                         for ($i=0;$i<$othseats_count;$i++) {
                                             $other_arr = mysqli_fetch_array($othseats_result, MYSQLI_ASSOC);
@@ -212,6 +213,7 @@ $othseats_count = mysqli_num_rows($othseats_result);
                                         }
                                         ?>
 
+                                        //别人发布的座位（无位置）
                                         <?php
                                         $othseats_result = mysqli_query($conn,"SELECT * FROM `seatsinfo` WHERE name <> '$name'AND seatsleft=0 ORDER BY date desc");
                                         for ($i=0;$i<$othseats_count;$i++) {
@@ -246,6 +248,7 @@ $othseats_count = mysqli_num_rows($othseats_result);
                             </div>
                         </div>
 
+                        //我发布的座位
                         <div class="content">
                             <div class="container-fluid">
                                 <div class="row">

@@ -16,7 +16,7 @@ if($psw==""){
     echo "<script>alert('密码不可为空！'); history.go(-1);</script>";
 }
 
-echo $name;
+//更改数据库用户的基本信息
 require_once 'sqlconfig.php';
 $conn =connectdb();
 $name_result = mysqli_query($conn,"SELECT name FROM user WHERE id='$id'");

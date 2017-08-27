@@ -1,4 +1,6 @@
 <?php
+
+//查找要更改的原座位的信息
 $info_id = $_GET['info_id'];
 require_once 'sqlconfig.php';
 $conn =connectdb();
